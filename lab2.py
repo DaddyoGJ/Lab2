@@ -2,10 +2,14 @@ def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
     num_list = get_user_input()
-    print("After splitting: " + str(num_list)) #cant print float so had to change temp into string
+    print("Splitting: " + str(num_list)) #cant print float so had to change temp into string
+    num_sorted = sort_temperature(num_list)
+    print("Sorted List: " + str(num_sorted))
     num_average = calc_average(num_list)
     print("Avg Calc: " + str(num_average)) 
     find_min_max(num_list)
+    num_median = calc_median_temperature(num_list)
+    print("Median: " + str(num_median))
 
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
@@ -28,18 +32,24 @@ def calc_average(num_list):
     return avg  
 
 def find_min_max(num_list):
-    num_list.sort()
+    sort_temperature(num_list)
     min = num_list[0]
     print("Min: " + str(min))
     max = num_list[-1]
     print("Max: " + str(max))
 
 
-def sort_temperature():
-    print("")
+def sort_temperature(num_list):
+    num_list.sort()
+    return num_list
 
-def calc_median_temperature():
-    print("")
+def calc_median_temperature(num_list):
+    n = len(num_list)
+    if n % 2 is 1:
+        median = (num_list[(n-1)//2])
+    else:
+        median = ((num_list[n//2] + num_list[(n//2)-1])//2)
+    return median
 
 if __name__ == "__main__":
     main()
