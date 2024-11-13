@@ -16,7 +16,7 @@ def test_calc_average():
     assert (result == 78)
 
 def test_calc_median_temperature():
-    inputno = [70, 50, 80, 90, 100]
+    inputno = [70, 50, 80, 110, 90, 100]
     result = lab2.calc_median_temperature(inputno)
     
-    assert (result == 80)
+    assert (result == 85)

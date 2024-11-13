@@ -44,6 +44,7 @@ def sort_temperature(num_list):
     return num_list
 
 def calc_median_temperature(num_list):
+    sort_temperature(num_list)
     n = len(num_list)
     if n % 2 is 1:
         median = (num_list[(n-1)//2])
